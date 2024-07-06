@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='tipos-primitivos'/>
+        <page name='if-switch'/>
+        <page name='tuplas-e-arrays'/>
+        <page name='estrutura-repeticao'/>
+        <page name='dicionario'/>
+        <page name='funcoes'/>
+    </pages>
+</playground>
