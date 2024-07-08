@@ -105,3 +105,50 @@ print(getMessage("Batata"))
 func somar (numero1 x: Int, numero2 y: Int) {
     print(x + y)
 }
+
+func fetchProductById(_ id: Int) -> String {
+    // Banco fake
+    let dict = [
+        1: "iPhone",
+        2: "Macbook",
+        3: "iPad",
+    ]
+    
+//    var username: String? = nil
+//    
+//    var password: String? = nil
+    
+    //    let product = dict[id]
+    //
+    //    if (product != nil) {
+    //        return product!
+    //    }
+    
+//    if let product = dict[id] {
+//        return product
+//    }
+//    
+//    return "Produto não encontrado"
+    
+//    username = "XPTO"
+//    password = "Batata"
+    
+    guard let product = dict[id]
+//          let username = username,
+//          let password = password
+    else { return "Produto não encontrado" }
+    
+    return product
+}
+
+print(fetchProductById(10))
+print(fetchProductById(1))
+
+
+func convertStringToInt(_ input: String) -> String {
+    guard let converted = Int(input) else { return ("Falha na conversão para string: \(input)") }
+    return ("A conversão foi bem sucedida: \(converted)")
+}
+
+print(convertStringToInt("5"))
+print(convertStringToInt("abc"))
