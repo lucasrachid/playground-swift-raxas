@@ -151,4 +151,46 @@ func convertStringToInt(_ input: String) -> String {
 }
 
 print(convertStringToInt("5"))
-print(convertStringToInt("abc"))
+print(convertStringToInt("abcd"))
+
+func sum(_ x: Int, _ y: Int) -> Int {
+    return x + y
+}
+
+func divide(_ x: Int, _ y: Int) -> Int {
+    return x / y
+}
+
+func calc(_ a: Int, _ b: Int, _ operation: (Int, Int) -> Int) {
+    print("a: \(a)")
+    print("b: \(b)")
+    let result = operation(a, b)
+    print("Resultado: \(result)")
+}
+
+// Chamando a função calc com a função sum
+calc(10, 5, sum) // Output: a: 10, b: 5, Resultado: 15
+
+// Chamando a função calc com a função divide
+calc(10, 5, divide) // Output: a: 10, b: 5, Resultado: 2
+
+// Chamando a função calc, criando uma função por parâmetro
+calc(5, 5, { a, b in
+    a - b
+})
+
+//==============================================
+
+func callServer(url: String, callBack: (Int) -> ()) {
+    let code = 200
+    callBack(code)
+}
+
+callServer(url: "https://exemplo.com.br") { code in
+    if code == 200 {
+        print("Sucesso: código \(code)")
+        return
+    }
+    
+    print("Erro na solicitação: código 500")
+}

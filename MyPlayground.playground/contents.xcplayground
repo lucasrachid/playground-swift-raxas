@@ -8,5 +8,6 @@
         <page name='dicionario'/>
         <page name='funcoes'/>
         <page name='structs'/>
+        <page name='classes'/>
     </pages>
 </playground>
