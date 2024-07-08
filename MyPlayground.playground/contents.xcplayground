@@ -7,5 +7,6 @@
         <page name='estrutura-repeticao'/>
         <page name='dicionario'/>
         <page name='funcoes'/>
+        <page name='structs'/>
     </pages>
 </playground>
