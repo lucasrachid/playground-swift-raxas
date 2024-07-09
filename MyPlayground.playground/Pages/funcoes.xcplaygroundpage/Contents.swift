@@ -194,3 +194,43 @@ callServer(url: "https://exemplo.com.br") { code in
     
     print("Erro na solicitação: código 500")
 }
+
+func calcExercise(_ x: Int, _ function: (Int) -> Int) -> Int {
+    return function(x)
+}
+
+func calcDouble(_ x: Int) -> Int {
+    return x * 2
+}
+
+func calcSquare(_ x: Int) -> Int {
+    return x * x
+}
+
+print(calcExercise(4, calcDouble))
+print(calcExercise(4, calcSquare))
+
+func netflix(email: String, connectDevice: (String) -> [String:String]) {
+    print("conectando com email: \(email)")
+    let deviceConnected = connectDevice(email)
+    print("dispositivo conectado \(deviceConnected)")
+}
+
+func tv(email: String) -> [String: String] {
+    return [
+        "email": email,
+        "modelo": "samsung"
+    ]
+}
+
+
+// OPCAO 1
+netflix(email: "exemplo@gmail.com", connectDevice: tv(email:))
+
+// OPCAO 2
+netflix(email: "exemplo@gmail.com") { email in
+    [
+        "email": email,
+        "modelo": "iPhone 11"
+    ]
+}
